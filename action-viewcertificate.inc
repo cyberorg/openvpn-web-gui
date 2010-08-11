@@ -38,7 +38,7 @@ $smarty->assign ('subaction',     'VIEW');
 $GETidDEC = $_GET['id'];
 
 $tmpArray = openssl_get_database_contents($GETidDEC);
-$tmpCN = str_replace_spaces($tmpArray['CN']);
+$tmpCN = $tmpArray['CN'];
 
 $tmpArray['ExpDate'] = str_openssldata_to_string ($tmpArray['ExpDate']);
 $tmpArray['RevDate'] = str_openssldata_to_string ($tmpArray['RevDate']);

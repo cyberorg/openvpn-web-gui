@@ -429,7 +429,7 @@ function openssl_get_database_contents ($iSerial) {
 // Write the users password to a text file
 function openssl_write_password($iSerial, $filename, $password) {
 	$tmpFile = fopen($filename, 'a');
-	fwrite($tmpFile,$iSerial . ',' . $password);
+	fwrite($tmpFile,$iSerial . ',' . $password . "\n");
 	fclose($tmpFile);
 }
 
