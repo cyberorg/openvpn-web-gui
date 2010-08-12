@@ -55,7 +55,7 @@ if ($sExt == '.zip')
 	}
         if ($config['Download']['ZIP']['.ta']) {
                 if (is_file ($config['openssl']['TA']['pub'])) {
-                        $zipData->addFile (implode ('', file ($config['openssl']['TA']['pub'])), 'ta.crt');
+                        $zipData->addFile (implode ('', file ($config['openssl']['TA']['pub'])), 'ta.key');
                 }
         }
 
