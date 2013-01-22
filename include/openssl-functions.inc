@@ -325,7 +325,7 @@ function openssl_make_name ($adn)
  if (strlen ($adn['localityName'])           > 0) $sString .= '/L='           . $adn['localityName'];
  if (strlen ($adn['organizationName'])       > 0) $sString .= '/O='           . $adn['organizationName'];
  if (strlen ($adn['organizationalUnitName']) > 0) $sString .= '/OU='          . $adn['organizationalUnitName'];
- if (strlen ($adn['commonName'])             > 0) $sString .= '/CN='          . str_replace_spaces($adn['commonName']);
+ if (strlen ($adn['commonName'])             > 0) $sString .= '/CN='          . $adn['commonName'];
  if (strlen ($adn['emailAddress'])           > 0) $sString .= '/emailAddress='. $adn['emailAddress'];
 
  return $sString;

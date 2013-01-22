@@ -38,14 +38,13 @@ $smarty->assign ('subaction',     'VIEW');
 $GETidDEC = $_GET['id'];
 
 $tmpArray = openssl_get_database_contents($GETidDEC);
-$tmpCN = str_replace_spaces($tmpArray['CN']);
 
 $tmpArray['ExpDate'] = str_openssldata_to_string ($tmpArray['ExpDate']);
 $tmpArray['RevDate'] = str_openssldata_to_string ($tmpArray['RevDate']);
 $smarty->assign ('Certificate',        $tmpArray);
-$smarty->assign ('CertificateFileCRT', openssl_get_filename ($tmpCN, '.crt'));
-$smarty->assign ('CertificateFileKEY', openssl_get_filename ($tmpCN, '.key'));
-$smarty->assign ('CertificateFileCSR', openssl_get_filename ($tmpCN, '.csr'));
+$smarty->assign ('CertificateFileCRT', openssl_get_filename(str_replace_spaces ($tmpArray['CN']), '.crt'));
+$smarty->assign ('CertificateFileKEY', openssl_get_filename(str_replace_spaces ($tmpArray['CN']), '.key'));
+$smarty->assign ('CertificateFileCSR', openssl_get_filename(str_replace_spaces ($tmpArray['CN']), '.csr'));
 $smarty->assign ('Password', openssl_read_password($GETidDEC, $config['openssl']['passworddb']));
 // Display
 $smarty->assign  ('PluginPath',    $config['PluginsAbsolutePath']);

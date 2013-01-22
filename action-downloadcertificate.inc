@@ -20,7 +20,6 @@ $GETidDEC = $_GET['id'];
 
 // Load and convert Common Name field to download files
 $tmpArray = openssl_get_database_contents($GETidDEC);
-$tmpCN = str_replace_spaces($tmpArray['CN']);
 
 $sExt = '.crt';
 if (isset ($_REQUEST['Type']))
@@ -39,8 +38,8 @@ if ($sExt == '.zip')
  {
   if ($config['Download']['ZIP'][$Ext2zip])
   {
-   $File2zip  = openssl_get_filename ($tmpCN, $Ext2zip);
-   $File2name = $tmpCN . $Ext2zip;
+   $File2zip  = openssl_get_filename (str_replace_spaces($tmpArray['CN']), $Ext2zip);
+   $File2name = str_replace_spaces($tmpArray['CN']) . $Ext2zip;
 
    if (is_file ($File2zip))
     $zipData->addFile (implode ('', file ($File2zip)), $File2name);
@@ -62,7 +61,7 @@ if ($sExt == '.zip')
 	// Check and see if we should fix a config file
 	if ($config['Download']['ZIP']['Config_Generic']) {
 		if (is_file ($config['Download']['ZIP']['Config_Generici_Loc'])) {
-			$zipData->addFile (openvpn_config_replace(implode ('', file ($config['Download']['ZIP']['Config_Generici_Loc'])), $tmpCN), basename($config['Download']['ZIP']['Config_Generici_Loc']));
+			$zipData->addFile (openvpn_config_replace(implode ('', file ($config['Download']['ZIP']['Config_Generici_Loc'])), str_replace_spaces($tmpArray['CN'])), basename($config['Download']['ZIP']['Config_Generici_Loc']));
 		}
 	}
 
@@ -75,17 +74,17 @@ if ($sExt == '.zip')
  }
 
  // Flush the ZIP file to the client
- html_download_data ($zipData -> file (), $tmpCN .'_OVPN.zip');
+ html_download_data ($zipData -> file (), str_replace_spaces($tmpArray['CN']) .'_OVPN.zip');
 }
 else
 {
-$sCertificateFile = openssl_get_filename ($tmpCN, $sExt);
+$sCertificateFile = openssl_get_filename (str_replace_spaces($tmpArray['CN']), $sExt);
 if (!$sCertificateFile) {
-	html_error ("Can't find requested file " . $tmpCN);
+	html_error ("Can't find requested file " . str_replace_spaces($tmpArray['CN']));
 }
 
  // Download
-html_download ($sCertificateFile, $tmpCN . $sExt);
+html_download ($sCertificateFile, str_replace_spaces($tmpArray['CN']) . $sExt);
 //html_dump ('$GLOBALS', $GLOBALS);
 
 //html_error($openssl['Database'][4]['CN']);
