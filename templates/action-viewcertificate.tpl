@@ -54,7 +54,7 @@ Revoked
 </tr>
 
 <tr valign="top">
-<td nowrap width="1%" align="right" bgcolor="#DDFFCC" style="border-bottom:1px groove black">e-mail</td>
+<td nowrap width="1%" align="right" bgcolor="#DDFFCC" style="border-bottom:1px groove black">E-mail</td>
 <td style="border-bottom:1px groove black"><font color="blue">{strip}
 {if $Certificate.Email != ''}
 <a href="mailto:{$Certificate.Email}">{$Certificate.Email}</a>

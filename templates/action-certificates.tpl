@@ -5,7 +5,7 @@
 <td style="border-bottom:1px groove gray; border-top:1px groove gray" width="1%">&nbsp;</td>
 <td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>Common Name</b></td>
 <td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>Department</b></td>
-<td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>e-mail</b></td>
+<td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>E-mail</b></td>
 <td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>Serial</b></td>
 <td style="border-bottom:1px groove gray; border-top:1px groove gray"><b>Status</b></td>
 <td style="border-bottom:1px groove gray; border-top:1px groove gray" bgcolor="#DDFFCC" width="5%"><b>Download</b></td>

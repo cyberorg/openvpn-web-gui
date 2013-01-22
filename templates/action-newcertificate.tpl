@@ -36,7 +36,7 @@
 </tr>
 
 <tr valign="middle">
-<td nowrap width="1%" align="right" bgcolor="#DDFFCC">e-mail</td>
+<td nowrap width="1%" align="right" bgcolor="#DDFFCC">E-mail</td>
 <td colspan="2"><input type="text" name="Email" size="40" maxlength="64" value="{$Default.emailAddress}"> (enter the full valid e-mail address there)</td>
 </tr>
 
