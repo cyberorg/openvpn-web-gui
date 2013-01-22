@@ -269,10 +269,19 @@ function openssl_build_key (&$anoutput, $adn, $validdays = NULL)
 
   $OldUMask = umask (0007);
 
-  // Write User Private Key 
-  if (!openssl_pkey_export_to_file ($UserPrivKey, $UserPrivKeyFile, $adn['password'], $config['openssl']['config']))
-  { $anoutput .= "- ERROR on ". (__LINE__ - 1) ." line (openssl_pkey_export_to_file)\n  ". openssl_error_strings () ."  (That might mean that the key folder is not write enabled for www user)"; break; }
-  $anoutput .= "+ OK wrote User Private Key into file $UserPrivKeyFile\n";
+  // Write User Private Key
+  // Check to see if a password has been set  
+  if (strlen($adn['password']) > 0) {
+	// User either generated a random password or typed a password
+	if (!openssl_pkey_export_to_file ($UserPrivKey, $UserPrivKeyFile, $adn['password'], $config['openssl']['config']))
+	{ $anoutput .= "- ERROR on ". (__LINE__ - 1) ." line (openssl_pkey_export_to_file)\n  ". openssl_error_strings () ."  (That might mean that the key folder is not write enabled for www user)"; break; }
+	$anoutput .= "+ OK wrote User Private Key into file $UserPrivKeyFile\n";
+  } else {
+	// User didn't input anything
+        if (!openssl_pkey_export_to_file ($UserPrivKey, $UserPrivKeyFile, NULL, $config['openssl']['config']))
+        { $anoutput .= "- ERROR on ". (__LINE__ - 1) ." line (openssl_pkey_export_to_file)\n  ". openssl_error_strings () ."  (That might mean that the key folder is not write enabled for www user)"; break; }
+        $anoutput .= "+ OK wrote User Private Key into file $UserPrivKeyFile\n";	
+  }
 
   // Write User Public Certificate
   if (!openssl_x509_export_to_file ($UserPubCert, $UserPubCertFile, FALSE))
