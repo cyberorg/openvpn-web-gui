@@ -8,8 +8,8 @@ if (!defined ("LOCAL_SECURITY_KEY"))
 $config['Company_Name']          = 'Random Company';
 $config['Company_Logo']          = 'img/OpenVPN-small.gif';
 // Change: your company home page
-$config['URL_Home_Page']         = 'http://openvpn-web-gui.sourceforge.net/';
-$config['AUTH_REALM']            = $config['Company_Name'] .' OpenVPN Web GUI v0.0.1';
+$config['URL_Home_Page']         = 'https://gitorious.org/openvpn-web-gui/';
+$config['AUTH_REALM']            = $config['Company_Name'] .' OpenVPN Web GUI v0.0.2';
 // What files to include into ZIP
 $config['Download']['ZIP']['.crt']    = true;
 $config['Download']['ZIP']['.key']    = true;
@@ -26,10 +26,10 @@ $config['Download']['ZIP']['Others'] = array ();
 // OPENVPN-WEB-GUI PLUG-INS _______________
 
 // Use the real absolute path here.
-$config['PluginsAbsolutePath'] = '/usr/local/www/data-dist/openvpn/plugins/';
+//$config['PluginsAbsolutePath'] = '/usr/local/www/data-dist/openvpn/plugins/';
 
 // If there are no plugins
-//$config['Plugins'] = NULL;
+$config['Plugins'] = NULL;
 // Otherwise, follow this example:
 //$config['Plugins']['PLUGINMANE']['Folder'] = 'FOLDERNAME';
 

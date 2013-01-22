@@ -133,6 +133,12 @@ Ok. now I believe I've told you the all about the current version of a project.
 
 HISTORY
 
+01/22/2013 - 0.0.2
+Fixed issues with spaces in Common Name
+Fixed typo with the word 'e-mail' in the GUI
+Fixed issues attaching the ta.key file
+Fixed spacing issue when writing passwords to the database
+
 08/11/2010 - 0.0.1
 Initial check in to git. Completely functional on development box. Testing hasn't been
 done on a clean install. 
