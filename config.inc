@@ -5,7 +5,7 @@ if (!defined ("LOCAL_SECURITY_KEY"))
 // OPENVPN-WEB-GUI ________________________
 
 // Change: your company name
-$config['Company_Name']          = 'Random Company';
+$config['Company_Name']          = 'CyberOrg Info';
 $config['Company_Logo']          = 'img/OpenVPN-small.gif';
 // Change: your company home page
 $config['URL_Home_Page']         = 'https://github.com/cyberorg/openvpn-web-gui';
