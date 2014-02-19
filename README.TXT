@@ -33,6 +33,22 @@ persons to see the statuses only while other group to make changes.
 
 INSTALLATION
 
+Clone the repository in /srv/www/htdocs/ like this:
+
+  cd /srv/www/htdocs
+  git clone git@github.com:cyberorg/openvpn-web-gui.git
+
+Make changes to config.inc as per your requirement. Point your browser to
+http://localhost/openvpn-web-gui/
+
+Default config.inc assumes that the openvpn configuration can be found here:
+
+ /etc/openvpn/server.conf
+ 
+Easy-rsa bits here:
+
+ /etc/openvpn/easy-rsa/2.0/
+
 Use OpenVPN's easy-rsa scripts to get started. If you have an existing OpenVPN
 installation using easy-rsa, things will work fine as long as the crt/crs/key
 files use the Common Name. The original project this one is ported from did NOT
