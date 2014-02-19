@@ -37,6 +37,8 @@ Clone the repository in /srv/www/htdocs/ like this:
 
   cd /srv/www/htdocs
   git clone git@github.com:cyberorg/openvpn-web-gui.git
+  cd openvpn-web-gui
+  chmod 777 templates_c
 
 Make changes to config.inc as per your requirement. Point your browser to
 http://localhost/openvpn-web-gui/
