@@ -3,7 +3,7 @@ define ("LOCAL_SECURITY_KEY", true);
 
 session_name ('openvpn-web-gui-session');
 session_start ();
-
+ini_set('include_path', './include/Smarty/');
 include_once ('config.inc');
 include_once ('include/functions.inc');
 
